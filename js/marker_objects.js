@@ -1,6 +1,6 @@
 const scene = new THREE.Scene();
 const camera = new THREE.Camera();
-scene.add(Camera);
+scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
