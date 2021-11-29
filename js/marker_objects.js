@@ -9,7 +9,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-let ArToolkitSource = THREEx.ArToolkitSource({
+var ArToolkitSource = THREEx.ArToolkitSource({
     // type of source - ['webcam', 'image', 'video']
     sourceType: "webcam",
 });
@@ -21,7 +21,7 @@ ArToolkitSource.init(() => {
     }, 2000);
 });
 
-let ArToolkitContext = new THREEx.ArToolkitContext({
+var ArToolkitContext = new THREEx.ArToolkitContext({
     cameraParametersUrl: '../camera_para.dat',
     detectionMode: 'color_and_matrix'
 });
@@ -30,7 +30,7 @@ ArToolkitContext.init(() => {
     camera.ProjectionMatrix.copy(ArToolkitContext.getProjectionMatrix());
 });
 
-let ArMarkerControls = new THREEx.ArMarkerControls(ArToolkitContext, camera, {
+var ArMarkerControls = new THREEx.ArMarkerControls(ArToolkitContext, camera, {
     type: 'pattern',
     patternUrl: '../markers/1/',
     changeMatrixMode: 'cameraTransformMatrix'
